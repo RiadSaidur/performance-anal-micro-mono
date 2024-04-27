@@ -1,0 +1,5 @@
+.vs
+.env
+env
+__pycache__
+prod_test.rest

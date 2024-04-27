@@ -1,0 +1,14 @@
+services:
+  face_recognition:
+    build: 
+      context: face_recognition
+      network: host
+    ports:
+      - '8000:8000'
+
+  person:
+    build: 
+      context: person
+      network: host
+    ports:
+      - '9000:9000'

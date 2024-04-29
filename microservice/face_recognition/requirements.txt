@@ -21,4 +21,3 @@ python-dotenv
 pytz
 six
 Werkzeug
-newrelic

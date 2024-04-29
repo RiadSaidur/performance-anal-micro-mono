@@ -3,8 +3,8 @@ import pymongo
 from pymongo.server_api import ServerApi
 from pymongo.errors import ConnectionFailure
 
-# CLIENT_URL ='mongodb://localhost:27017/'
-CLIENT_URL = 'mongodb+srv://syds:ariana@netjobs.jglqn.mongodb.net/?retryWrites=true&w=majority&appName=netjobs'
+CLIENT_URL ='mongodb://localhost:27017/'
+# CLIENT_URL = 'mongodb+srv://syds:ariana@netjobs.jglqn.mongodb.net/?retryWrites=true&w=majority&appName=netjobs'
 
 client = pymongo.MongoClient(CLIENT_URL, server_api=ServerApi('1'))
 db = client.faceRecognition
@@ -17,18 +17,12 @@ try:
 except ConnectionFailure:
     print("MongoDB server not available")
 
-def saveImage(filename):
-  try:
-    db.image.insert_one({ "filename": filename })
-    return True
-  except Exception as e:
-    return False
-
 def saveMissingPersonEncodings(encodeList, faceList):
   try:
     db.encodeList.insert_one({ "faceEncoding": list(encodeList[0]), "face": faceList })
     return True
   except Exception as e:
+    print(e)
     return False
 
 def getMissingPersonEncodings():
@@ -51,6 +45,7 @@ def getMissingPersonEncodings():
       encoding = [ numpy.array(faceEncoding) for faceEncoding in knownEncodings]
       return {"encoding": encoding, "faces": faceEncodings['faceList']}
   except Exception as e:
+    print(e)
     return []
 
 def getExistingMissingPersonEncoding(missingPersonId):

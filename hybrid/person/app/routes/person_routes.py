@@ -3,8 +3,8 @@ from flask_restful import Resource
 import os
 from werkzeug.utils import secure_filename
 import uuid
-from .database import saveImage, saveMissingPersonEncodings
-from .face_recognition import findEncodings
+from app.database.person_database import saveImage, saveMissingPersonEncodings
+from app.services.faceRecognition_services import findEncodings
 
 _UPLOAD_FOLDER = 'uploads'
 
@@ -58,15 +58,16 @@ class Person(Resource):
 
             if not encodeList:
               return { "successful": False, "error": "Image not found" }, 404
+            
             isSaved = saveMissingPersonEncodings(encodeList, missingPersonId)
+
             if isSaved:
               return { "successful": True }, 201
             
             return { "successful": False, "error": "Unable to store on Database" }, 500
         except KeyError:
             return { "successful": False, "error": "Invalid arguments" }, 400
-        except FileNotFoundError:
+        except FileNotFoundError as e:
           return { "successful": False, "error": "Image not found" }, 404
         except Exception as e:
             return {'error': str(e)}, 500
-        

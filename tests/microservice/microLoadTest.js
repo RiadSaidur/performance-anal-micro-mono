@@ -4,7 +4,7 @@ import { FormData } from 'https://jslib.k6.io/formdata/0.0.2/index.js';
 
 
 // Setting the base URL
-const API_BASE_URL = 'http://127.0.0.1:5000';
+const API_BASE_URL = 'http://192.168.0.105:8079';
 
 export let options = {
     stages: [

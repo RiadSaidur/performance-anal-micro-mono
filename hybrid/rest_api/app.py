@@ -16,4 +16,4 @@ if __name__ == "__main__":
     api.init_app(app)
 
     # run the server
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8079, debug=True)

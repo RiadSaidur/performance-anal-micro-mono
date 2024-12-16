@@ -1,0 +1,13 @@
+Column,Average
+micro_web_transaction_time,9071.299897382216
+micro_vus,108.29611111111112
+mono_web_transaction_time,18047.266793992214
+mono_vus,108.30111111111111
+hybrid_web_transaction_time,12997.891129839996
+hybrid_vus,108.29944444444445
+dist_micro_web_transaction_time,5926.818337051664
+dist_micro_vus,108.29666666666667
+dist_mono_web_transaction_time,7467.954297581096
+dist_mono_vus,108.28944444444444
+dist_hybrid_web_transaction_time,30745.556534830004
+dist_hybrid_vus,108.31722222222223

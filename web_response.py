@@ -1,4 +1,5 @@
 import csv
+from datetime import datetime
 
 input_file_paths = ['tests/microservice/200-micro_load_test.csv', 'tests/microservice/200-mono_load_test.csv', 'tests/microservice/200-hybrid_load_test.csv', 'tests/microservice/200-dist_micro_load_test.csv', 'tests/microservice/200-dist_mono_load_test.csv', 'tests/microservice/200-dist_hybrid_load_test.csv']
 
@@ -28,6 +29,8 @@ def process_csv(input_file_path, idx):
         http_req_duration = 0
         
         for row in csv_reader:
+            timestamp = datetime.fromtimestamp(int(row[1])).strftime('%Y-%m-%d %H:%M:%S')
+            
             if row[0] in col_web_transaction_time:
                 web_transaction_time += float(row[2])
             elif row[0] == 'http_req_duration':
@@ -35,8 +38,8 @@ def process_csv(input_file_path, idx):
             elif row[0] == 'vus':
                 vus = float(row[2])
                 if idx == 0:
-                    response_time_data.append([counter, http_req_duration, vus])
-                    web_transaction_time_data.append([counter, web_transaction_time, vus])
+                    response_time_data.append([timestamp, http_req_duration, vus])
+                    web_transaction_time_data.append([datetime.fromtimestamp(int(row[1])).strftime('%Y-%m-%d %H:%M:%S'), web_transaction_time, vus])
                 else:
                     try:
                         response_time_data[counter].extend([http_req_duration, vus])

@@ -1,13 +1,13 @@
 Metric,Percentile,Value
-micro_response_time,1% High,867.2958909099997
-micro_response_time,0.1% High,3256.6367179202525
-mono_response_time,1% High,648.8526164499999
-mono_response_time,0.1% High,2310.5272850322367
-hybrid_response_time,1% High,766.7131610999995
-hybrid_response_time,0.1% High,2820.8585654312046
-dist_micro_response_time,1% High,649.40766047
-dist_micro_response_time,0.1% High,1777.4638155400396
-dist_mono_response_time,1% High,1071.9086249899995
-dist_mono_response_time,0.1% High,3244.305081388023
-dist_hybrid_response_time,1% High,2963.54760914
-dist_hybrid_response_time,0.1% High,3633.8414994420154
+micro_response_time,1% High,895.585924
+micro_response_time,0.1% High,7272.856655
+mono_response_time,1% High,657.762364
+mono_response_time,0.1% High,3069.112772
+hybrid_response_time,1% High,957.821462
+hybrid_response_time,0.1% High,3476.932032
+dist_micro_response_time,1% High,655.321571
+dist_micro_response_time,0.1% High,1904.025847
+dist_mono_response_time,1% High,1126.186859
+dist_mono_response_time,0.1% High,3318.246769
+dist_hybrid_response_time,1% High,3180.251346
+dist_hybrid_response_time,0.1% High,3682.880957

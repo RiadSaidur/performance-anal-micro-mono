@@ -1,0 +1,13 @@
+Metric,Percentile,Value
+micro_web_transaction_time,1% High,48568.81106700004
+micro_web_transaction_time,0.1% High,101323.88312500004
+mono_web_transaction_time,1% High,100843.23879400012
+mono_web_transaction_time,0.1% High,213860.087874
+hybrid_web_transaction_time,1% High,73180.6766810001
+hybrid_web_transaction_time,0.1% High,137956.59695900002
+dist_micro_web_transaction_time,1% High,45615.69191299998
+dist_micro_web_transaction_time,0.1% High,132071.64228599978
+dist_mono_web_transaction_time,1% High,60105.185987000026
+dist_mono_web_transaction_time,0.1% High,141936.63340799985
+dist_hybrid_web_transaction_time,1% High,177983.8274500002
+dist_hybrid_web_transaction_time,0.1% High,279896.2569239997

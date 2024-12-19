@@ -1,8 +1,11 @@
 import pandas as pd
 import numpy as np
 
+# Log: Start of the process
+print("Starting the calculation of weighted percentiles...")
+
 # Load data from CSV
-data = pd.read_csv('source/200-response_time_clean.csv')
+data = pd.read_csv('data/cleaned/200-response_time_clean.csv')
 
 # Define percentiles
 percentiles = {
@@ -24,6 +27,8 @@ lows = {'Metric': [], 'Percentile': [], 'Value': []}
 
 # Calculate weighted percentiles for each column
 for column in columns:
+    print(f"Processing column: {column}")
+    
     # Determine the corresponding _vus column
     vus_column = column.replace('response_time', 'vus')
 
@@ -53,5 +58,8 @@ highs_df = pd.DataFrame(highs)
 lows_df = pd.DataFrame(lows)
 
 # Save results to separate CSVs
-highs_df.to_csv('percentiles/response_time_highs.csv', index=False)
-lows_df.to_csv('percentiles/response_time_lows.csv', index=False)
+highs_df.to_csv('data/percentiles/response_time/response_time_highs.csv', index=False)
+lows_df.to_csv('data/percentiles/response_time/response_time_lows.csv', index=False)
+
+# Log: End of the process
+print("Calculation complete. Results have been saved.")

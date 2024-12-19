@@ -1,0 +1,2 @@
+micro_avg_transaction_time,mono_avg_transaction_time,hybrid_avg_transaction_time,dist_micro_avg_transaction_time,dist_mono_avg_transaction_time,dist_hybrid_avg_transaction_time
+10508.362857729113,22192.43200180352,15846.577888686865,6938.723438286958,8507.036582280309,41160.603193858784
